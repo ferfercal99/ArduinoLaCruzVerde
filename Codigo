@@ -1,1 +1,18 @@
 //INTRODUCE AQUI EL CODIGO DE ARDUINO DE LACRUZVERDE
+
+const int pinAltavoz= 14;
+int nivelAgua=0;
+void setup() {
+  // put your setup code here, to run once:
+  ledcAttachPin(pinAltavoz,0);
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  nivelAgua= analogRead(13);
+  if(nivelAgua<500){
+    ledcWriteTone(0, 440);
+    delay(1000);
+  }
+}
